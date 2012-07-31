@@ -1,4 +1,4 @@
-/* Generates a hash from hashName, and then divides hash by plugMax, returning the remainder. */
+/* Generates a hash from str, and then divides hash by hashMax, returning the remainder. */
 
 uint32_t genHash(char *str, uint32_t hashMax)
 {
