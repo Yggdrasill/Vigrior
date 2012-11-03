@@ -2,12 +2,19 @@
 
 uint32_t genHash(char *str, uint32_t hashMax)
 {
-  size_t len = strlen(str);
-  uint32_t hash = 0;
-  for(size_t i = 0; i <= len; i++)
-    hash += (uint32_t)str[i];
-  hash %= hashMax;
-  return hash;
+  unsigned hash = 0;
+  unsigned len = strlen(str);
+  for(int i = 0; i < len; i++ ) {
+    hash += str[i];
+    hash += ( hash << 10 );
+    hash ^= ( hash >> 6 );
+  }
+
+  hash += ( hash << 3 );
+  hash ^= ( hash >> 11 );
+  hash += ( hash << 15 );
+
+  return hash % hashMax;
 }
 
 /* Checks for hash collisions. Returns non-zero on collision and zero otherwise. */
