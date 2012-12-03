@@ -30,3 +30,4 @@ int check_hash(char *s1, char *s2, uint32_t max)
     hashCol = 1;
   return hashCol;
 }
+
