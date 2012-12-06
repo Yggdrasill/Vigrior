@@ -2,7 +2,7 @@
 
 /* Generates a hash from str, and then divides hash by max, returning the remainder. */
 
-uint32_t gen_hash(char *str, uint32_t max)
+uint32_t gen_hash(const char *str, const uint32_t max)
 {
   unsigned hash = 0;
   unsigned len = strlen(str);
@@ -21,7 +21,7 @@ uint32_t gen_hash(char *str, uint32_t max)
 
 /* Checks for hash collisions. Returns non-zero on collision and zero otherwise. */
 
-int check_hash(char *s1, char *s2, uint32_t max)
+int check_hash(const char *s1, const char *s2, const uint32_t max)
 {
   int hash_col = 0;
   uint32_t hash = gen_hash(s1, max);
