@@ -26,8 +26,8 @@ int check_hash(char *s1, char *s2, uint32_t max)
   int hashCol = 0;
   uint32_t hash = gen_hash(s1, max);
   uint32_t hash2 = gen_hash(s2, max);
-  if(hash == hash2 && strcmp(s1, s2) )
-    hashCol = 1;
+  if(hash == hash2)
+    hashCol = strcmp(s1, s2);
   return hashCol;
 }
 
